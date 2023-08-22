@@ -48,7 +48,7 @@ export const Home = () => {
                         <div className={'links'}>
                             {/*<a href={'#'}>sign up</a>*/}
                         </div>
-                        <button type='sumbit' onClick={onSubmit}>login</button>
+                        <button type='sumbit' style={{padding:5}} onClick={onSubmit}>login</button>
 
 
 
