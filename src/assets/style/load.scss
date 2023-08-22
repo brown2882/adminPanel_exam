@@ -3,6 +3,14 @@
   padding: 0;
   //font-family: montserrat;
 }
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+  color:white;
+}
 .center{
   display: flex;
   text-align: center;
@@ -59,14 +67,7 @@ span{
 
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: black;
-  color:white;
-}
+
 .box{
   position: relative;
   width: 380px;

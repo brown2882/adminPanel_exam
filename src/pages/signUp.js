@@ -7,9 +7,7 @@ export const SignUp = () => {
         const navigate = useNavigate()
         const {register, handleSubmit} = useForm();
 
-        const onsumbit = (data) =>{
-            console.log(data);
-
+        function Onsumbit(data)  {
             navigate('/adminPanel')
         }
 
@@ -31,7 +29,7 @@ export const SignUp = () => {
                     <div className={'links'}>
                         {/*<a href={'#'}>sign up</a>*/}
                     </div>
-                    <button onClick={onsubmit}
+                    <button onClick={Onsumbit}
                             style={{backgroundColor:'green',color:"white", padding:5}}
                             type='sumbit'>Click here!</button>
 
