@@ -7,6 +7,7 @@ import {CustomInput} from "../component/customInput";
 
 export const AdminPanel = () => {
     const [newValue, setNewValue] = useState()
+    const [newLastName, setLastName] = useState()
     const dispatch = useDispatch()
 
     const { todo } = useSelector( store => ({
@@ -19,7 +20,8 @@ export const AdminPanel = () => {
 
     const handleCreate = () => {
         setNewValue('')
-        dispatch(addTodo([...todo, {firstName:newValue, id: todo?.length + 1}]))
+        setLastName('')
+        dispatch(addTodo([...todo, {firstName:newValue, lastName:newLastName, id: todo?.length + 1}]))
     }
 
     useEffect(() => {
@@ -42,12 +44,13 @@ export const AdminPanel = () => {
                 value={newValue}
                 onChange={(e) => handleChange(e)}
             />
-                <p>{newValue}</p>
+                {/*<p>{newValue}</p>*/}
 
                 <button onChange={handleCreate}>Add</button>
                 {todo?.map((i, j) => (
-                    <div key={j}>
+                    <div style={{display:'flex'}} key={j}>
                         <p>{i?.firstName}</p>
+                        <p>{i?.lastName}</p><br/>
                     </div>
                 ))}
             </div>
