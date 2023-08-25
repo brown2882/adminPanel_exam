@@ -1,8 +1,96 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.panel{
+  background-color: #1c1c1c;
+  min-height: 100vh;
+  color: white;
 }
-body{
-  background-color: #18b201;
+.table{
+  padding-left: 35%;
+  padding-top: 10%;
+}
+th,td{
+  padding-left: 5px;
+}
+.input{
+  margin-left: 280px;
+  margin-top: 50px;
+}
+.userDetails{
+  background-color: #7DB83F;
+  min-height: 100vh;
+  h2{
+    color:black;
+    margin-left: 40%;
+    padding-top: 60px;
+  }
+}
+.firstDiv{
+  background-color: burlywood;
+  min-height: 400px;
+  width: 400px;
+  border-radius: 20%;
+  margin-top: 70px;
+  margin-left: 500px;
+  h3{
+    color: #7DB83F;
+    padding-top: 20px;
+    margin-left: 80px;
+  }
+  h4{
+    color: #7DB83F;
+    margin-left: 80px;
+    padding-top: 4px;
+  }
+  button{
+    margin-left: 80px;
+    margin-top: 35px;
+    padding: 4px;
+    border-radius: 20px;
+    background-color: #7DB83F;
+    color: white;
+  }
+}
+.mainSpinner{
+  background-color: #7DB83F;
+  height: 100vh;
+}
+.mainSpin{
+  padding-top: 300px;
+  padding-left: 700px;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  border: 4.5px solid #0000;
+  border-radius: 50%;
+  border-color: #25090d #0000;
+  animation: spinner-e04l1k 1s infinite linear;
+
+}
+
+.spinner::before,
+.spinner::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2.2px;
+  border: inherit;
+  border-radius: 50%;
+}
+
+.spinner::before {
+  border-color: #474bff #0000;
+  animation: inherit;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+}
+
+.spinner::after {
+  margin: 8.9px;
+}
+
+@keyframes spinner-e04l1k {
+  100% {
+    transform: rotate(1turn);
+  }
 }

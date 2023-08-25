@@ -25,7 +25,7 @@ export const Home = () => {
         }
     }
     return(
-        <>
+        <div className={'home'}>
             {loader ?
                 <div className='center'>
                     <div className='ring'></div>
@@ -56,6 +56,6 @@ export const Home = () => {
                 </div>
             }
 
-        </>
+        </div>
     )
 }

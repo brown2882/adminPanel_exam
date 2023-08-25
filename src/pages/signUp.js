@@ -12,7 +12,7 @@ export const SignUp = () => {
         }
 
     return(
-        <>
+        <div className={'home'}>
             <div className={'boxTwo'}>
                 <span className={'borderLineTwo'}></span>
                 <form onSubmit={handleSubmit(onsubmit)}>
@@ -37,6 +37,6 @@ export const SignUp = () => {
 
                 </form>
             </div>
-        </>
+        </div>
     )
 }

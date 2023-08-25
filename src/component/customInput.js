@@ -3,6 +3,6 @@
 
 export const CustomInput = ( { onChange, value }) => {
     return(
-        <input type='text' onChange={onChange} value={value}/>
+        <input style={{marginLeft:15}} type='text'  onChange={onChange} value={value}/>
     )
 }
