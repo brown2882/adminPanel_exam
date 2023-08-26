@@ -2,15 +2,29 @@ import '../assets/style/load.scss'
 import {useNavigate} from "react-router";
 import {useForm} from "react-hook-form";
 import {AdminPanel} from "./adminPanel";
+import {memo, useEffect} from "react";
+import axios from "axios";
+import {useDispatch} from "react-redux";
+import {getTodo} from "../store/todo/todo.action";
 
-export const SignUp = () => {
+export const SignUp =memo( () => {
         const navigate = useNavigate()
         const {register, handleSubmit} = useForm();
-
+        const dispatch = useDispatch()
         function Onsumbit(data)  {
-            navigate('/adminPanel')
+            if(data.firstName !== '', data.password !== ''){
+                navigate('/adminPanel')
+            } else{
+                alert('please,fill in input')
+            }
+
         }
 
+    useEffect(() => {
+        axios.get('https://gorest.co.in/public/v2/users').then((res) =>{
+            dispatch(getTodo(res.data))
+        })
+    }, []);
     return(
         <div className={'home'}>
             <div className={'boxTwo'}>
@@ -39,4 +53,4 @@ export const SignUp = () => {
             </div>
         </div>
     )
-}
+})

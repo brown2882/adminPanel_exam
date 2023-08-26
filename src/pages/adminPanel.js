@@ -29,11 +29,16 @@ export const AdminPanel = () => {
         setAge(e.target.value)
     }
     const handleCreate = () => {
-        setNewValue('')
-        setLastName('')
-        setMail('')
-        setAge('')
-        dispatch(addTodo([...todo, {firstName:newValue, lastName:newLastName,mail:mail, age:age, id: todo?.length + 1}]))
+        if(newValue !== '',newLastName !== '', age !== '', mail !== ''){
+            setNewValue('')
+            setLastName('')
+            setMail('')
+            setAge('')
+            dispatch(addTodo([...todo, {firstName:newValue, lastName:newLastName,mail:mail, age:age, id: todo?.length + 1}]))
+        } else {
+            alert('error,please fill in input')
+        }
+
     }
 
     useEffect(() => {
@@ -45,7 +50,9 @@ export const AdminPanel = () => {
     }, []);
 
     const clickRedax = () => {
-        dispatch(deleteTodo())
+        dispatch(deleteTodo((id) => {
+            getTodo((todo => todo.filter((user) => user.id !== id)));
+        }))
     }
     const navigate = useNavigate()
     const userDet = () => {

@@ -15,7 +15,7 @@ export const Userdetails = () => {
             setloader(false)
         }, 2000)
     }, []);
-
+    const [name, setName] =useState([{name:'John'}])
 
     return(
         <div>
@@ -31,10 +31,10 @@ export const Userdetails = () => {
                 <h2>User details</h2>
                 <div className={'firstDiv'}>
                  <img src={user} alt={'manOne'} style={{width:150,height:150, borderRadius:90}}/>
-                 <h3>Name - John </h3>
+                 <h3>Name - john </h3>
                  <h4>Surname-Brown</h4>
                  <h4>Age - 30</h4>
-                 <h4>Mail - kk</h4>
+                 <h4>Mail - bron@gmail.com</h4>
                  <button onClick={adminPanel}>Admin Panel</button>
                 </div>
                 </div>

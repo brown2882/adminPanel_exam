@@ -34,7 +34,7 @@ export const Home = () => {
                 :
                 <div className={'box'}>
                     <span className={'borderLine'}></span>
-                    <form onSubmit={handleSubmit(onsubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <h1>Sign in</h1>
                         <div className={'inputBox'}>
                             <h2 className={'p'}>Username</h2>
