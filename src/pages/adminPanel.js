@@ -1,5 +1,5 @@
 import '../assets/style/styles.scss'
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {addTodo, deleteTodo, getTodo} from "../store/todo/todo.action";
 import {CustomInput} from "../component/customInput";
@@ -28,18 +28,13 @@ export const AdminPanel = () => {
     const handleChangAge = (e) => {
         setAge(e.target.value)
     }
-    const handleCreate = () => {
-        if(newValue !== '',newLastName !== '', age !== '', mail !== ''){
-            setNewValue('')
-            setLastName('')
-            setMail('')
-            setAge('')
+    const handleCreate = useCallback(() => {
+        if(newValue && newLastName && age && mail){
             dispatch(addTodo([...todo, {firstName:newValue, lastName:newLastName,mail:mail, age:age, id: todo?.length + 1}]))
         } else {
             alert('error,please fill in input')
         }
-
-    }
+    }, [todo]) 
 
     useEffect(() => {
         dispatch(getTodo([
