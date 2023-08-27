@@ -3,7 +3,7 @@ import '../assets/style/load.scss'
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router";
 import {SignUp} from "./signUp";
-
+import {toast} from "react-toastify"
 export const Home = () => {
     const [loader, setloader] = useState(true)
     useEffect(() => {
@@ -18,10 +18,10 @@ export const Home = () => {
 
 
     const onSubmit = (data) => {
-        if(data.firstName !== ' '){
-            navigate('/signUp')
+        if(!data.firstName){
+            toast.error('error')
         } else{
-            alert('error')
+            navigate('/signUp')
         }
     }
     return(
