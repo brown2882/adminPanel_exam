@@ -30,11 +30,15 @@ export const AdminPanel = () => {
     }
     const handleCreate = useCallback(() => {
         if(newValue && newLastName && age && mail){
+            setNewValue('')
+            setLastName('')
+            setMail('')
+            setAge('')
             dispatch(addTodo([...todo, {firstName:newValue, lastName:newLastName,mail:mail, age:age, id: todo?.length + 1}]))
         } else {
             alert('error,please fill in input')
         }
-    }, [todo]) 
+    }, [todo])
 
     useEffect(() => {
         dispatch(getTodo([
